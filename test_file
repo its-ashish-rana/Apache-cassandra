@@ -1,0 +1,46 @@
+# To create a new keyspace.
+#syntax
+CREATE KEYSPACE “KeySpace Name”
+WITH replication = {'class': ‘Strategy name’, 'replication_factor' : ‘No.Of   replicas’};
+
+#syntax
+CREATE KEYSPACE “KeySpace Name”
+WITH replication = {'class': ‘Strategy name’, 'replication_factor' : ‘No.Of  replicas’}
+AND durable_writes = ‘Boolean value’;
+
+#SimpleStrategy 
+CREATE KEYSPACE test_file
+WITH replication = {'class':'SimpleStrategy' , 'replicationfactor':'3'};
+
+#NetworkTopology Strategy
+CREATE KEYSPACE test_file
+WITH replication = {'class':'NetworkTopologyStrategy' , 'replicationfactor':'3'}
+AND durable_writes = ‘false’;
+
+#Keyspace Verification
+SELECT * FROM system.schema_keyspaces;
+
+#Use keyspace test_file
+USE test_file;
+
+#To create a table
+CREATE TABLE Test_file
+(
+track_id int,
+product_name text,
+vendor_contact MAP<TEXT,INT>,
+PRIMARY KEY(track_id)
+);
+
+#Table verification
+Describe Test_file;
+
+#To insert values into the table Test_file
+INSERT INTO Test_file (track_id, product_name, vendor_contact)
+VALUES ('123', 'VCD001', 'Cassandra');
+
+#VERIFY DATA 
+SELECT * FROM Test_file;
+
+
+
