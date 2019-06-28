@@ -42,5 +42,10 @@ VALUES ('123', 'VCD001', 'Cassandra');
 #VERIFY DATA 
 SELECT * FROM Test_file;
 
+#To check the status of nodes
+nodetool status
+nodetool info
+
+
 
 
