@@ -46,6 +46,10 @@ SELECT * FROM Test_file;
 nodetool status
 nodetool info
 
+#searching
+ps auwx | grep cassandra
+
+
 
 
 
