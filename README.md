@@ -26,7 +26,7 @@ CREATE TABLE emp.member (
     );
 </pre>
 <h3><b>Connect to your cluster</b></h3></br>
-All of our code is contained in the <b>Application.py</b> file. The <b>create_connection()</b> function connects to our cluster. 
+All of our code is contained in the <a href = "https://github.com/9718546128/Apache-cassandra/blob/master/Application.py">Application.py</a> file. The <b>create_connection()</b> function connects to our cluster. 
 By default, <b>Cluster()</b> will try to connect to <b>127.0.0.1 (localhost)</b>. Replace with your own contact point(s) if necessary.
 <pre>
 def create_connection():
