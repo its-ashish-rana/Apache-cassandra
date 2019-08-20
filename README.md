@@ -43,6 +43,7 @@ def set_user( session, name, m_id, m_city, m_email ):
     # TO DO: execute SimpleStatement that inserts one user into the table
     session.execute("INSERT INTO member( name, m_id, m_city, m_email ) VALUES (%s,%s,%s,%s)", [ name, m_id, m_city, m_email ])
 </pre>
+    
 <pre>
 <b>SELECT a user</b>
 def get_user(session, name):
@@ -51,6 +52,8 @@ def get_user(session, name):
     result = session.execute("SELECT * FROM member WHERE name = %s", [name]).one()
     print result.name, result.m_id
 </pre>
+
+<a href= "https://github.com/9718546128/Apache-cassandra/blob/master/Cassandra_read"> What's about bulk read?</a>
 
 <b>UPDATE a user's age</b>
 <pre>
