@@ -1,0 +1,48 @@
+#To define a Keyspace    
+keyspace: Test_DataReadCassandra
+
+USE Test_DataReadCassandra; 
+
+keyspace_definition: |
+  CREATE KEYSPACE Test_bulk_read WITH replication = { 'class': 'SimpleStrategy', 'replication_factor':1 };
+
+#To create a table.
+
+table_definition:
+
+  CREATE TABLE data_test (
+    pri_key int,
+    clustering_column int,
+    v1 text,
+    v2 text,
+    PRIMARY KEY(pri_key, clustering_column));
+
+columnspec:
+  - name: pri_key
+
+  - name: clustering_column
+    cluster: fixed(1)
+
+  - name: v1
+    size: fixed(50)
+
+  - name: v2
+    size: fixed(50)
+
+insert:
+  partitions: fixed(1)  # the number of partitions
+  select: fixed(1)/1  # the probability of visiting any row in the partition
+  batchtype: UNLOGGED
+
+queries:
+  single_part_query:
+    cql: select * from data_test where pk = ?
+    fields: samerow
+
+  clustering_column_v1_v2_tr_query:
+    columns: clustering_column, v1, v2
+    page_size: 1000
+
+  v1_v2_tr_query:
+    columns: v1, v2
+    page_size: 1000
