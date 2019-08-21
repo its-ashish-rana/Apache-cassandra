@@ -30,6 +30,7 @@ CREATE KEYSPACE Emp
  
  SELECT * FROM Emp_table;
  
+ APPLY BATCH
  
  
  
