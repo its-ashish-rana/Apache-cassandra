@@ -35,13 +35,15 @@ def create_connection():
     return cluster.connect('emp')
 </pre>
 
-<h3><b>CRUD Operations</h3><b>
+CRUD Operations
 Fill the code in the functions that will add a user, get a user, update a user and delete a user from the table with the driver.
-<pre>
 <b>INSERT a user</b>
+<pre>
+
 def set_user( session, name, m_id, m_city, m_email ):
     # TO DO: execute SimpleStatement that inserts one user into the table
     session.execute("INSERT INTO member( name, m_id, m_city, m_email ) VALUES (%s,%s,%s,%s)", [ name, m_id, m_city, m_email ])
+
 </pre>
     
 <pre>
