@@ -1,0 +1,35 @@
+#To run as a single script all opertion will be perform.
+
+BATCH BEGIN 
+
+# Step 1: To create keyspace used the following CQL query.
+CREATE KEYSPACE Emp
+    WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
+  
+ #Step 2: use keyspace 
+ USE Emp;
+ 
+ #Step 3: To create table used the following CQl query.
+ CREATE TABLE Emp_table (
+    name text PRIMARY KEY,
+    Emp_id int,
+    Emp_city text,
+    Emp_email text,
+    );
+ 
+ #Step 4: To insert into Emp_table used the following CQl query.
+ 
+ Insert into Emp_table(name , Emp_id ,Emp_city , Emp_email) VALUES ('ashish', 1001 , 'Delhi' , 'ashish05.rana05@gmail.com');
+ Insert into Emp_table(name , Emp_id ,Emp_city , Emp_email) VALUES ('amit ', 1002 , 'noida' , 'abc@gmail.com');
+ Insert into Emp_table(name , Emp_id ,Emp_city , Emp_email) VALUES ('dhruv', 1003 , 'pune' , 'xyz@gmail.com');
+ Insert into Emp_table(name , Emp_id ,Emp_city , Emp_email) VALUES ('shivang', 1004 , 'mumbai' , 'test@gmail.com');
+ Insert into Emp_table(name , Emp_id ,Emp_city , Emp_email) VALUES ('aayush', 1005 , 'gurugram' , 'cass_write@gmail.com');
+ Insert into Emp_table(name , Emp_id ,Emp_city , Emp_email) VALUES ('bhagyesh', 1006 , 'chandigar' , 'welcome@gmail.com');
+ 
+ #Step 5: To read data used the following CQl query.
+ 
+ SELECT * FROM Emp_table;
+ 
+ 
+ 
+ 
