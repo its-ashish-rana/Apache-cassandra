@@ -14,7 +14,7 @@ We highly recommend to use a virtualenv
 Create the keyspace and table
 The emp.cql file provides the schema used for this project:
 <pre>
-CREATE KEYSPACE member
+CREATE KEYSPACE emp
     WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'};
 </pre>
 <pre>
